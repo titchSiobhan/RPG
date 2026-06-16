@@ -1,0 +1,142 @@
+{
+    "enemies": [
+        {
+            "species": "Goblin",
+            "home": "Forest",
+            "hates": "Desert",
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 2.05,
+                "defense": 3.05
+            }
+        },
+        {
+            "species": "Orc",
+            "home": "Desert",
+            "hates": "Forest",
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 2.05,
+                "defense": 3.05
+            }
+        },
+        {
+            "species": "Troll",
+            "home": "Forest",
+            "hates": "Desert",
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 2.05,
+                "defense": 3.05
+            }
+        },
+        {
+            "species": "Slime",
+            "home": [
+                "Forest",
+                "Swamp",
+                "Graveyard"
+            ],
+            "hates": "Desert",
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 2.05,
+                "defense": 3.05
+            }
+        },
+        {
+            "species": "Skeleton",
+            "home": "Graveyard",
+            "hates": "Desert",
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 2.05,
+                "defense": 3.05
+            }
+        },
+        {
+            "species": "Zombie",
+            "home": "Graveyard",
+            "hates": [
+                "Village",
+                "Swamp",
+                "Desert"
+            ],
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 1.05,
+                "defense": 4.25
+            }
+        },
+        {
+            "species": "wolf",
+            "home": "Forest",
+            "hates": "Desert",
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 2.05,
+                "defense": 3.05
+            }
+        },
+        {
+            "species": "Bear",
+            "home": "Forest",
+            "hates": "Desert",
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 2.05,
+                "defense": 3.05
+            }
+        },
+        {
+            "species": "Lizard",
+            "home": "Desert",
+            "hates": "Swamp",
+            "homeBuff": {
+                "attack": 2.2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 3,
+                "defense": 4.05
+            }
+        },
+        {
+            "species": "Snake",
+            "home": "Swamp",
+            "hates": "Desert",
+            "homeBuff": {
+                "attack": 2,
+                "defense": 2
+            },
+            "hateDebuff": {
+                "attack": 2.05,
+                "defense": 3.05
+            }
+        }
+    ]
+}

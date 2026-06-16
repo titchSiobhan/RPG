@@ -1,0 +1,257 @@
+{
+	"quest": [
+		{
+			"quest-ID": "QUEST_001",
+			"Description": "",
+			"Type": "Fishing",
+			"Punishment": {
+                "reputation": 5
+            },
+			"outcomes": {
+				"very bad": [
+					{
+						"chance": 15,
+						"text": "You rod breaks and you lose the fish",
+						"reward": "Nothing"
+					},
+					{
+						"chance": 30,
+						"text": "You almost get the fish but the hook snaps off",
+						"reward": "Nothing"
+					},
+					{
+						"chance": 25,
+						"text": "You miss the fish",
+						"reward": "Nothing"
+					},
+					{
+						"chance": 30,
+						"text": "You've caught something! It's some algae! Super useful!",
+						"reward": "Nothing"
+					}
+				],
+				"bad": [
+					{
+						"chance": 55,
+						"text": "You've caught a fish, but it's too small",
+						"reward": [
+							{
+								"coins": 2,
+								"exp": 5
+							}
+						]
+					},
+					{
+						"chance": 15,
+						"text": "You almost get the fish but the hook snaps off",
+						"reward": "Nothing"
+					},
+					{
+						"chance": 30,
+						"text": "You catch a huge fish! But it's too big for you to handle",
+						"reward": {
+							"exp": 10
+						}
+					}
+				],
+				"neutral": [
+					{
+						"chance": 50,
+						"text": "You've caught a fish, it's average sized",
+						"reward": [
+							{
+								"coins": 5,
+								"exp": 10
+							}
+						]
+					},
+					{
+						"chance": 20,
+						"text": "You caught something! It's a left shoe",
+						"reward": {
+							"exp": 5
+						}
+					},
+					{
+						"chance": 10,
+						"text": "You've managed to fish up another fishing rod. Maybe you can sell it on the market?",
+						"reward": {
+							"exp": 20,
+							"coins": 20
+						}
+					},
+                    {
+                        "chance": 20,
+                        "text": "You've caught a small fish",
+                        "reward": {
+                            "exp": 5,
+                           " coins": 10
+                        }
+                    }
+				],
+				"good": [
+					{
+						"chance": 10,
+						"text": "You managed to catch two fish!",
+						"reward": {
+                            "exp": 20,
+                            "coins": 20
+                        }
+					},
+					{
+						"chance": 40,
+						"text": "You caught a large fish",
+						"reward": {
+                            "exp": 15,
+                            "coins": 15
+                        }
+					}
+				],
+				"very good": [
+					{
+						"chance": 5,
+						"text": "You found a book of mending!",
+						"reward": {
+                            "exp": 50,
+                            "coins": 50
+                        }
+					},
+					{
+						"chance": 50,
+						"text": "You caught a large fish",
+						"reward": {
+                            "exp": 15,
+                            "coins": 15
+                        }
+					},
+					{
+						"chance": 30,
+						"text": "It's a legendary fish!",
+						"reward": {
+                            "exp": 25,
+                            "coins": 25}
+					},
+                    {
+                        "chance": 15,
+                        "text": "You caught a glass slipper, it's a rare find",
+                        "reward": {
+                            "exp": 30,
+                           "coins": 50
+                        }
+                    }
+				]
+			}
+		},
+		
+		{
+			"quest-ID": "jjf",
+			"Description": "jjf",
+			"Type": "jjf",
+			"Reward": "jjf",
+			"Punishment": "jjf",
+			"outcomes": {
+				"very bad": [
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					}
+				],
+
+				"bad": [
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					}
+				],
+				"neutral": [
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					}
+				],
+				"good": [
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					}
+				],
+				"very good": [
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					},
+					{
+						"chance": 1,
+						"outcomes": "jjf",
+
+						"reward": "jjf"
+					}
+				]
+			}
+		}
+	]
+}

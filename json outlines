@@ -1,0 +1,8 @@
+enemies
+
+need list of names, list of species level and health are calculated from player level
+
+
+quests
+
+quest id, quest name, description, outcomes (different outcomes for each level of luck), rewards (based off of luck and reputation), punishment for not accepting (bases on luck and reputation)
