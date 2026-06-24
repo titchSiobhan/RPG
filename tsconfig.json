@@ -9,12 +9,12 @@
     // See also https://aka.ms/tsconfig/module
     "module": "nodenext",
     "target": "esnext",
-    "allowImportingTsExtensions": true,
-     "emitDeclarationOnly": true,
+    //"allowImportingTsExtensions": true,
+     //"emitDeclarationOnly": true,
     // For nodejs:
     "lib": ["esnext"],
-   "types": ["node"],
-   "rootDir": "./src",
+   "types": ["node", "jest"],
+   "rootDir": ".",
    "outDir": "./dist",
     // and npm install -D @types/node
 
@@ -38,8 +38,8 @@
     // Recommended Options
     "strict": true,
     
-    "verbatimModuleSyntax": true,
-    "isolatedModules": true,
+    //"verbatimModuleSyntax": true,
+    //"isolatedModules": true,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "skipLibCheck": true,

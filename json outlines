@@ -6,3 +6,9 @@ need list of names, list of species level and health are calculated from player 
 quests
 
 quest id, quest name, description, outcomes (different outcomes for each level of luck), rewards (based off of luck and reputation), punishment for not accepting (bases on luck and reputation)
+
+
+choosing quest
+quests are in an array so using math random of the array length.
+
+choosing the out come with the chances, chose a random number that fit between the number?

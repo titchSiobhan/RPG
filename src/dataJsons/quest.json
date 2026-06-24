@@ -1,257 +1,291 @@
 {
-	"quest": [
+	"quests": [
 		{
-			"quest-ID": "QUEST_001",
-			"Description": "",
-			"Type": "Fishing",
-			"Punishment": {
-                "reputation": 5
-            },
+			"questID": "QUEST_001",
+			"description": "Someone from the village has asked for your help catching a few fish.",
+			"type": "Fishing",
+			"punishment": {
+				"reputation": 5
+			},
 			"outcomes": {
-				"very bad": [
+				"terrible": [
 					{
 						"chance": 15,
 						"text": "You rod breaks and you lose the fish",
-						"reward": "Nothing"
+						"reward": [],
+						"punishment": []
 					},
 					{
 						"chance": 30,
 						"text": "You almost get the fish but the hook snaps off",
-						"reward": "Nothing"
+						"reward": [],
+						"punishment": []
 					},
 					{
 						"chance": 25,
 						"text": "You miss the fish",
-						"reward": "Nothing"
+						"reward": [],
+						"punishment": []
 					},
 					{
 						"chance": 30,
 						"text": "You've caught something! It's some algae! Super useful!",
-						"reward": "Nothing"
+						"reward": [
+							{
+								"exp": 5
+							}
+						],
+						"punishment": []
 					}
 				],
 				"bad": [
 					{
 						"chance": 55,
 						"text": "You've caught a fish, but it's too small",
-						"reward": [
-							{
-								"coins": 2,
-								"exp": 5
-							}
-						]
+						"reward": [{ "coins": 2 }, { "exp": 5 }],
+						"punishment": []
 					},
 					{
 						"chance": 15,
 						"text": "You almost get the fish but the hook snaps off",
-						"reward": "Nothing"
+						"reward": [],
+						"punishment": []
 					},
 					{
 						"chance": 30,
 						"text": "You catch a huge fish! But it's too big for you to handle",
-						"reward": {
-							"exp": 10
-						}
+						"reward": [
+							{
+								"exp": 10
+							}
+						],
+						"punishment": []
 					}
 				],
 				"neutral": [
 					{
 						"chance": 50,
 						"text": "You've caught a fish, it's average sized",
-						"reward": [
-							{
-								"coins": 5,
-								"exp": 10
-							}
-						]
+						"reward": [{ "coins": 5 }, { "exp": 10 }],
+						"punishment": []
 					},
 					{
 						"chance": 20,
 						"text": "You caught something! It's a left shoe",
-						"reward": {
-							"exp": 5
-						}
+						"reward": [
+							{
+								"exp": 5
+							}
+						],
+						"punishment": []
 					},
 					{
 						"chance": 10,
 						"text": "You've managed to fish up another fishing rod. Maybe you can sell it on the market?",
-						"reward": {
-							"exp": 20,
-							"coins": 20
-						}
+						"reward": [{ "exp": 20 }, { "coins": 20 }],
+						"punishment": []
 					},
-                    {
-                        "chance": 20,
-                        "text": "You've caught a small fish",
-                        "reward": {
-                            "exp": 5,
-                           " coins": 10
-                        }
-                    }
+					{
+						"chance": 20,
+						"text": "You've caught a small fish",
+						"reward": [{ "exp": 5 }, { "coins": 10 }],
+						"punishment": []
+					}
 				],
 				"good": [
 					{
 						"chance": 10,
 						"text": "You managed to catch two fish!",
-						"reward": {
-                            "exp": 20,
-                            "coins": 20
-                        }
+						"reward": [{ "exp": 20 }, { "coins": 20 }]
 					},
 					{
 						"chance": 40,
 						"text": "You caught a large fish",
-						"reward": {
-                            "exp": 15,
-                            "coins": 15
-                        }
-					}
-				],
-				"very good": [
-					{
-						"chance": 5,
-						"text": "You found a book of mending!",
-						"reward": {
-                            "exp": 50,
-                            "coins": 50
-                        }
-					},
-					{
-						"chance": 50,
-						"text": "You caught a large fish",
-						"reward": {
-                            "exp": 15,
-                            "coins": 15
-                        }
+						"reward": [{ "exp": 15 }, { "coins": 15 }],
+						"punishment": []
 					},
 					{
 						"chance": 30,
 						"text": "It's a legendary fish!",
-						"reward": {
-                            "exp": 25,
-                            "coins": 25}
+						"reward": [{ "exp": 25 }, { "coins": 25 }],
+						"punishment": []
 					},
-                    {
-                        "chance": 15,
-                        "text": "You caught a glass slipper, it's a rare find",
-                        "reward": {
-                            "exp": 30,
-                           "coins": 50
-                        }
-                    }
+					{
+						"chance": 10,
+						"text": "You caught a clay fish, it's a rare find",	
+						"reward": [{ "exp": 30 }, { "coins": 15 }],
+						"punishment": []
+					},
+					{
+						"chance": 10,
+						"text": "You caught a clay pot",
+						"reward": [{ "exp": 20 }, { "coins": 10 }],
+						"punishment": []
+					}
+				],
+				"amazing": [
+					{
+						"chance": 5,
+						"text": "You found a book of mending!",
+						"reward": [{ "exp": 50 }, { "coins": 50 }]
+					},
+					{
+						"chance": 50,
+						"text": "You caught a large fish",
+						"reward": [{ "exp": 15 }, { "coins": 15 }],
+						"punishment": []
+					},
+					{
+						"chance": 30,
+						"text": "It's a legendary fish!",
+						"reward": [{ "exp": 25 }, { "coins": 25 }],
+						"punishment": []
+					},
+					{
+						"chance": 15,
+						"text": "You caught a glass slipper, it's a rare find",
+						"reward": [{ "exp": 30 }, { "coins": 50 }],
+						"punishment": []
+					}
 				]
 			}
 		},
-		
 		{
-			"quest-ID": "jjf",
-			"Description": "jjf",
-			"Type": "jjf",
-			"Reward": "jjf",
-			"Punishment": "jjf",
+			"questID": "QUEST_002",
+			"description": "Someone from the village has asked you to help deliver some a letter.",
+			"type": "Delivery",
+			"punishment": {
+				"reputation": 5
+			},
 			"outcomes": {
-				"very bad": [
+				"terrible": [
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 15,
+						"text": "You tripped and dropped the letter in the fire and burnt you're hand",
+						"punishment": [{"reputation": 5}, {"health": 5}],
+						"reward": []
 					},
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 30,
+						"text": "As you were handing the letter over a bird swooped down and picked it up",
+						"reward": [],
+						"punishment": []
 					},
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 25,
+						"text": "You've accidentally deliver the letter to the wrong person",
+						"punishment": [{
+							"reputation": 5}],
+						"reward": []
+					},
+					{
+						"chance": 40,
+						"text": "You've deliver the letter",
+						"reward": [{
+							"reputation": 5}],
+						"punishment": []
 					}
 				],
-
 				"bad": [
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 15,
+						"text": "They said that the letter had 10 coins in it. They called you a thief",
+						"punishment": [{ "coins": 10 }, { "reputation": 5 }],
+						"reward": []
 					},
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 15,
+						"text": "You almost delivered the letter but they didn't want it",
+						"reward": [],
+						"punishment": []
 					},
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 30,
+						"text": "You didn't deliver the letter in time.",
+						"reward": [
+							{
+								"exp": 5
+							}
+						], 
+						"punishment": [{ "reputation": 5 }]
+					},
+					{
+						"chance": 20,
+						"text": "You've delivered the letter. They asked for you to send one back.",
+						"reward": [{ "coins": 5 }, { "exp": 10 }, { "reputation": 5 }],
+						"punishment": []
 					}
 				],
 				"neutral": [
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 50,
+						"text": "You've delivered the letter. They asked for you to send one back.",
+						"reward": [{ "coins": 5 }, { "exp": 10 }, { "reputation": 5 }],
+						"punishment": []
 					},
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 20,
+						"text": "The person you're supposed to deliver the letter to was behind you.",
+						"reward": [
+							{"exp": 5},
+							{"reputation": 5},
+							{"coins": 5}
+						],
+						"punishment": []
 					},
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 10,
+						"text": "You look at the name on the letter, it has your name on it. It's full of insults.",
+						"reward": [],
+						"punishment": []
+					},
+					{
+						"chance": 20,
+						"text": "You look at the address, it's a fake address",
+						"reward": [],
+						"punishment": []
 					}
 				],
 				"good": [
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 40,
+						"text": "It's addressed to you, It's a letter from a friend",
+						"reward": [{ "exp": 20 }, { "coins": 20 }],
+						"punishment": []
+					},
+					
+					{
+						"chance": 50,
+						"text": "You delivered the letter. Everyone was happy",
+						"reward": [{ "exp": 25 }, { "coins": 25 }, { "reputation": 8 }],
+						"punishment": []
 					},
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
-					},
-					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 10,
+						"text": "You delivered the letter but the didn't want it",	
+						"reward": [{ "exp": 30 }, { "coins": 25 }, { "reputation": 8 }],
+						"punishment": []
 					}
+					
 				],
-				"very good": [
+				"amazing": [
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 5,
+						"text": "It's addressed to you, it sends you on a quest. You're feeling tired now",
+						"reward": [{ "exp": 50 }, { "coins": 70 }],
+						"punishment": [{ "energy": 10 }]
 					},
 					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
-					},
-					{
-						"chance": 1,
-						"outcomes": "jjf",
-
-						"reward": "jjf"
+						"chance": 70,
+						"text": "You delivered the letter in time.",
+						"reward": [{ "exp": 15 }, { "coins": 15 }, { "reputation": 8 }],
+						"punishment": []
 					}
+					
 				]
 			}
 		}
+
+		
 	]
 }

@@ -42,10 +42,10 @@ class playerServices {
     maxCoins: 90100,
     reputation: 50,
     maxReputation: 100,
-    reputationCategory: "Neutral",
+    reputationCategory: "neutral",
     luck: 50,
     maxLuck: 100,
-    luckCategory: "Neutral",
+    luckCategory: "neutral",
     strength: 30,
     maxStrength: 1000,
     defense: 5,
@@ -70,10 +70,10 @@ createPlayer(name: string): Player {
       maxCoins: 90100,
       reputation: 50,
       maxReputation: 100,
-      reputationCategory: "Neutral",
+      reputationCategory: "neutral",
       luck: 50,
       maxLuck: 100,
-      luckCategory: "Neutral",
+      luckCategory: "neutral",
       strength: 15,
       maxStrength: 1000,
       defense: 15,
@@ -112,6 +112,7 @@ createPlayer(name: string): Player {
     }
     return this.player;
   }
+
 
   modifyStatGain(stat: keyof typeof this.maxMap, amount: number): Player {
 
@@ -157,7 +158,7 @@ createPlayer(name: string): Player {
   changingLuckCategory(): Player {
     const luck = this.player.luck;
     if (luck <= 20) {
-      this.player.luckCategory = "very bad";
+      this.player.luckCategory = "terrible";
     } else if (luck <= 40) {
        this.player.luckCategory = "bad";
     } else if (luck <= 60) {
@@ -165,7 +166,7 @@ createPlayer(name: string): Player {
     } else if (luck <= 80) {
       this.player.luckCategory = "good";
     } else if (luck <= 100) {
-       this.player.luckCategory = "very good";
+       this.player.luckCategory = "amazing";
     }
    
     return this.player;
@@ -174,7 +175,7 @@ createPlayer(name: string): Player {
   changingReputationCategory(): Player {
     const reputation = this.player.reputation;
     if (reputation <= 20) {
-      this.player.reputationCategory = "very bad";
+      this.player.reputationCategory = "terrible";
     } else if (reputation <= 40) {
        this.player.reputationCategory = "bad";
     } else if (reputation <= 60) {
@@ -182,7 +183,7 @@ createPlayer(name: string): Player {
     } else if (reputation <= 80) {
       this.player.reputationCategory = "good";
     } else if (reputation <= 100) {
-       this.player.reputationCategory = "very good";
+       this.player.reputationCategory = "amazing";
     }
    
     return this.player;

@@ -4,7 +4,16 @@ import fightRouter from './routes/fightRoutes.js'
 import questRouter from './routes/questRouter.js'
 
 const app = express()
+const allowedOrigins = ['http://localhost:5173'];
 
+
+import cors from 'cors';
+const options: cors.CorsOptions = {
+    origin: allowedOrigins,
+    credentials: true
+}
+
+app.use(cors(options));
 app.use(express.json())
 
 app.get('/', (req, res) => {
