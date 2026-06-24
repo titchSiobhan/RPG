@@ -1,40 +1,26 @@
 import { playerServicesInstance } from '../service/playerServices.js';
 import quests from '../dataJsons/quest.json' with { type: 'json' };
 import type { Request, Response } from 'express';
+import { savePlayer } from '../saveGame.js';
 
 function rest(req: Request, res: Response) {
 	const player = playerServicesInstance.getPlayer();
 try {
     const randomLuck = Math.floor(Math.random() * 100);
-	player.energy += 15;
-	if (player.energy > player.maxEnergy) {
-		player.energy = player.maxEnergy
-	}
-	player.health += 15;
-	if (player.health > player.maxHealth) {
-		player.health = player.maxHealth
-	}
+	player.health = Math.min(player.health + 15, player.maxHealth);
+	player.energy = Math.min(player.energy + 15, player.maxEnergy);
     player.luck = randomLuck;
     playerServicesInstance.changingLuckCategory();
-    let message = '';
-    switch (player.luckCategory) {
-        case 'terrible': 
-        message = "You feel really unlucky today.";
-        break;
-        case 'bad': 
-        message = "Don't feel too lucky today.";
-        break;
-        case 'neutral': 
-        message = "You don't feel very lucky today.";
-        break;
-        case 'good': 
-        message = "You feel lucky today.";
-        break;
-        case 'amazing': 
-        message = "You feel super lucky today.";
-        break;
-            
-    }
+    
+    const luckMessages: Record<string, string> = {
+            terrible: "You feel really unlucky today.",
+            bad: "Don't feel too lucky today.",
+            neutral: "You don't feel very lucky today.",
+            good: "You feel lucky today.",
+            amazing: "You feel super lucky today."
+        };
+		const message = luckMessages[player.luckCategory];
+		savePlayer(player);
 	res.json({player, message});
 }
 catch (error) {
@@ -106,6 +92,7 @@ const quest = quests.quests.find(q => q["questID"] === questId)
 					playerServicesInstance.modifyStatLose(stat as NumericStats, amount);
 				}
 			}
+			savePlayer(player);
 				return res.json({	outcome, player });
 		}
 	}
@@ -141,8 +128,9 @@ function declineQuest(req: Request, res: Response) {
 			playerServicesInstance.modifyStatLose(statKey as any, amount);
 		}
 	}
-
+savePlayer(player);
 	return res.json({ quest, punishmentApplied: punishment, player });
+
 }
 
 

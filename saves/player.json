@@ -1,0 +1,23 @@
+{
+  "name": "Siobhan",
+  "level": 1,
+  "health": 91,
+  "maxHealth": 100,
+  "exp": 0,
+  "maxExp": 100,
+  "energy": 50,
+  "maxEnergy": 50,
+  "inventory": [],
+  "coins": 0,
+  "maxCoins": 90100,
+  "reputation": 50,
+  "maxReputation": 100,
+  "reputationCategory": "neutral",
+  "luck": 45,
+  "maxLuck": 100,
+  "luckCategory": "neutral",
+  "strength": 15,
+  "maxStrength": 1000,
+  "defense": 15,
+  "maxDefense": 1000
+}

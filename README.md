@@ -1,19 +1,10 @@
-## A Text based RPG game.
+## Questage
 
-## Started
+A lightweight roguelike RPG text‑based sim where you create a character, explore the realm, complete quests, fight monsters, and survive a world driven by luck, events, and dynamic encounters.
 
-- Set up basic player stats
+## Stack
 
-- Set up basic fighting mechanics
-
-- The ability to gain or lose stats
-
-- Small reward system
-
-- Basic rest function
-
-## Working on
-
-- Quests
-
-- Luck based outcomes
+- Node.js
+- Express.js
+- TypeScript
+- JSON-based data
