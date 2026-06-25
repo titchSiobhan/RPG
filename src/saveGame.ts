@@ -2,6 +2,7 @@ import fs from "fs";
 import type { Player } from "./service/playerServices.js";
 import path from "path";
 import { fileURLToPath } from "url";
+import {playerServicesInstance} from "./service/playerServices.js";
 
 export function savePlayer(player: Player) {
   const __filename = fileURLToPath(import.meta.url);
@@ -31,3 +32,19 @@ console.log("Exists:", fs.existsSync(savePath));
   const data = fs.readFileSync(savePath, "utf-8");
   return JSON.parse(data);
 }
+
+
+export function deletePlayer(): null {
+  const __filename = fileURLToPath(import.meta.url);
+  const __dirname = path.dirname(__filename);
+
+  const savePath = path.join(__dirname, "saves", "player.json");
+
+  if (fs.existsSync(savePath)) {
+    fs.unlinkSync(savePath);
+  }
+
+
+  return null;
+}
+

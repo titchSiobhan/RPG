@@ -1,0 +1,84 @@
+{
+    "events": [
+        {
+            "eventID": "EVENT_001",
+            "message": "You've come across a bridge, you would give it a 7.8/10",
+            "punishment":[],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_002",
+            "message": "You accidentally broke a pot, the villagers are mad",
+            "punishment":[{
+                "reputation": 5
+            }],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_003",
+            "message": "You accidentally dropped some coins",
+            "punishment":[{ "coins": 10 }],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_004",
+            "message": "During a fight you accidentally killed a chicken, you're now wanted",
+            "punishment":[{"reputation": 5}, {"health": 5}],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_005",
+            "message": "You come across a cheese rolling festival, it looks fun.",
+            "punishment":[],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_006",
+            "message": "You come across a cheese rolling festival, it looks fun.",
+            "punishment":[],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_007",
+            "message": "You come across a cheese rolling festival, it looks fun.",
+            "punishment":[],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_008",
+            "message": "You tripped on a rock and hurt yourself",
+            "punishment":[{"health": 5}],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_009",
+            "message": "You've stopped at an inn for some lunch",
+            "punishment":[],
+            "reward": [{"health": 5}]
+        },
+        {
+            "eventID": "EVENT_010",
+            "message": "You found some coins, lucky no one saw you pick them up",
+            "punishment":[],
+            "reward": [{"coins": 10}]
+        },
+        {
+            "eventID": "EVENT_011",
+            "message": "A guard comes up to you and tells you to stop lollygagging",
+            "punishment":[],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_012",
+            "message": "Something happened, we won't talk about this incident",
+            "punishment":[],
+            "reward": []
+        },
+        {
+            "eventID": "EVENT_013",
+            "message": "There's a kitten that needs petting",
+            "punishment":[],
+            "reward": []
+        }
+    ]
+}

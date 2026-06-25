@@ -8,3 +8,11 @@ A lightweight roguelike RPG text‑based sim where you create a character, explo
 - Express.js
 - TypeScript
 - JSON-based data
+
+## Live Link
+
+[Questage](https://questage.netlify.app/)
+
+## Other Links 
+[Frontend](https://github.com/titchSiobhan/RPG-frontend)
+[Backend](https://github.com/titchSiobhan/RPG)
