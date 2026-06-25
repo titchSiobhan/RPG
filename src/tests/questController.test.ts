@@ -1,5 +1,5 @@
 import request from "supertest";
-import * as questController from '../src/controller/questController.js' 
+import * as questController from '../controller/questController.js';
 
 
 test("add", () => {

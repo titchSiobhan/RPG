@@ -2,9 +2,13 @@ import express from 'express'
 import playerRouter from './routes/playerRoutes.js'
 import fightRouter from './routes/fightRoutes.js'
 import questRouter from './routes/questRouter.js'
+import { loadPlayer } from './saveGame.js'
+import { playerServicesInstance } from './service/playerServices.js'
 
 const app = express()
-const allowedOrigins = ['http://localhost:5173'];
+const allowedOrigins = ['http://localhost:5173',
+    'https://questage.netlify.app'
+];
 
 
 import cors from 'cors';
@@ -15,6 +19,14 @@ const options: cors.CorsOptions = {
 
 app.use(cors(options));
 app.use(express.json())
+const saved = loadPlayer();
+
+if (saved) {
+  playerServicesInstance.loadFromSave(saved);
+  console.log('Loaded player from save');
+} else {
+  console.log('No player found in save');
+}
 
 app.get('/', (req, res) => {
     res.send('Hello World!')
@@ -22,7 +34,7 @@ app.get('/', (req, res) => {
 
 app.use('/player', playerRouter)
 app.use('/fight', fightRouter)
-app.use('/quest', questRouter)
+app.use('/quest', questRouter)  
 
 
 export default app
