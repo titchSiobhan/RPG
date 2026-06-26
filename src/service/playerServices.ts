@@ -182,13 +182,7 @@ class playerServices {
 		return this.player;
 	}
 
-	loadFromSave(player: Player): Player {
-		this.player = {
-			...this.player,
-			...player,
-		};
-		return this.player;
-	}
+
 }
 
 export const playerServicesInstance = new playerServices();
