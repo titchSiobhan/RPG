@@ -1,7 +1,7 @@
 import enemyNames from '../dataJsons/enemyNames.json' with { type: 'json' };
 import enemies from '../dataJsons/enemyTypes.json' with { type: 'json' };
 import { playerServicesInstance } from '../service/playerServices.js';
-import {savePlayer} from '../saveGame.js';
+
 import type { Request, Response } from 'express';
 
 
@@ -62,7 +62,7 @@ function attackEnemy(req: Request, res: Response) {
         playerServicesInstance.modifyStatGain('coins', reward);
         playerServicesInstance.modifyStatGain('exp', rewardExp);
     }
-    savePlayer(player)
+    
     res.json({ enemy: currentEnemy,  player: player});
 }
 
@@ -75,7 +75,7 @@ function enemyAttacks(req: Request, res: Response) {
     if (player.health === 0) {
         player.health = 1;
         currentEnemy = null;
-        savePlayer(player)
+       
         return res.json({player});
     }
 

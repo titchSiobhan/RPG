@@ -1,7 +1,7 @@
 import { playerServicesInstance } from '../service/playerServices.js';
 import quests from '../dataJsons/events.json' with { type: 'json' };
 import type { Request, Response } from 'express';
-import { savePlayer } from '../saveGame.js';
+
 
 function getRandomEvent(req: Request, res: Response) {
     const player = playerServicesInstance.getPlayer();

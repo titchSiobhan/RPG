@@ -1,7 +1,7 @@
 import { playerServicesInstance } from '../service/playerServices.js';
 import quests from '../dataJsons/quest.json' with { type: 'json' };
 import type { Request, Response } from 'express';
-import { savePlayer } from '../saveGame.js';
+
 
 function rest(req: Request, res: Response) {
 	const player = playerServicesInstance.getPlayer();
@@ -20,7 +20,7 @@ try {
             amazing: "You feel super lucky today."
         };
 		const message = luckMessages[player.luckCategory];
-		savePlayer(player);
+		
 	res.json({player, message});
 }
 catch (error) {
@@ -92,7 +92,7 @@ const quest = quests.quests.find(q => q["questID"] === questId)
 					playerServicesInstance.modifyStatLose(stat as NumericStats, amount);
 				}
 			}
-			savePlayer(player);
+		
 				return res.json({	outcome, player });
 		}
 	}
@@ -128,7 +128,7 @@ function declineQuest(req: Request, res: Response) {
 			playerServicesInstance.modifyStatLose(statKey as any, amount);
 		}
 	}
-savePlayer(player);
+
 	return res.json({ quest, punishmentApplied: punishment, player });
 
 }

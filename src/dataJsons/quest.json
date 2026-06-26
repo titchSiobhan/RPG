@@ -284,6 +284,128 @@
 					
 				]
 			}
+		},
+		{
+			"questID": "QUEST_003",
+			"description": "You've been asked to gather some ingredients.",
+			"type": "Delivery",
+			"punishment": {
+				"reputation": 5
+			},
+			"outcomes": {
+				"terrible": [
+					{
+						"chance": 15,
+						"text": "You collected the wrong ingredients, now they can't cook the food",
+						"punishment": [{"reputation": 5}],
+						"reward": []
+					},
+					{
+						"chance": 30,
+						"text": "You dropped the ingredients as you hand them over",
+						"reward": [],
+						"punishment": []
+					},
+					{
+						"chance": 25,
+						"text": "You decided to buy the ingredients but never checked them. They were all moldy. Ew.",
+						"punishment": [{
+							"reputation": 5}],
+						"reward": []
+					}
+				],
+				"bad": [
+					{
+						"chance": 15,
+						"text": "You forgot to bring the ingredients",
+						"punishment": [],
+						"reward": []
+					},
+					{
+						"chance": 15,
+						"text": "You decided to go fishing and didn't make it back in time.",
+						"reward": [],
+						"punishment": []
+					},
+					{
+						"chance": 30,
+						"text": "You brought ingredients, they offered you some food.",
+						"reward": [
+							{
+								"health": 5
+							}
+						], 
+						"punishment": []
+					},
+					{
+						"chance": 20,
+						"text": "You dropped the ingredients as you hand them over",
+						"reward": [{ "exp": 10 }],
+						"punishment": []
+					}
+				],
+				"neutral": [
+					{
+						"chance": 50,
+						"text": "You brought back the ingredients, they offered you some food.",
+						"reward": [{ "coins": 5 }, { "exp": 10 }, { "reputation": 5 }, {"health": 5}],
+						"punishment": []
+					},
+					{
+						"chance": 10,
+						"text": "You harvested some fresh ingredients, they were ecstatic",
+						"reward": [
+							{"exp": 5},
+							{"reputation": 10},
+							{"coins": 5}
+						],
+						"punishment": []
+					},
+					{
+						"chance": 20,
+						"text": "You kept dropping the ingredients, but no one noticed",
+						"reward": [],
+						"punishment": []
+					}
+				],
+				"good": [
+					{
+						"chance": 40,
+						"text": "You fished a fresh fish, it was just what they asked for",
+						"reward": [{ "exp": 20 }, { "coins": 20 }],
+						"punishment": []
+					},
+					
+					{
+						"chance": 50,
+						"text": "You delivered the letter in time.",
+						"reward": [{ "exp": 25 }, { "coins": 25 }, { "reputation": 8 }],
+						"punishment": []
+					}
+					
+				],
+				"amazing": [
+					{
+						"chance": 5,
+						"text": "You shopped for the freshest ingredients. You're feeling tired now, but it was worth it",
+						"reward": [{ "exp": 50 }, { "coins": 70 }],
+						"punishment": [{ "energy": 10 }]
+					},
+					{
+						"chance": 70,
+						"text": "You brought back the ingredients, they offered you some food.",
+						"reward": [{ "exp": 15 }, { "coins": 15 }, { "reputation": 8 }],
+						"punishment": []
+					},
+					{
+						"chance": 20,
+						"text": "You looked in their cupboard and found some fresh ingredients.",
+						"reward": [{ "exp": 20 }, { "coins": 20 }],
+						"punishment": []
+					}
+					
+				]
+			}
 		}
 
 		
