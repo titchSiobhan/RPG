@@ -1,6 +1,7 @@
 import { playerServicesInstance } from '../service/playerServices.js';
 import quests from '../dataJsons/events.json' with { type: 'json' };
 import type { Request, Response } from 'express';
+import { achievementController } from './achievementsController.js';
 
 
 function getRandomEvent(req: Request, res: Response) {
@@ -23,16 +24,24 @@ function getRandomEvent(req: Request, res: Response) {
             const stat = Object.keys(reward)[0] as keyof typeof reward;
             const amount = reward[stat] + Math.round((reward[stat] * player.level ** 2) / 50)
             playerServicesInstance.modifyStatGain(stat as NumericStats, amount);
+           
         }
     }
     if (event.punishment) {
         for (const punishment of event.punishment) {
             const stat = Object.keys(punishment)[0] as keyof typeof punishment;
-            const amount = punishment[stat] - Math.round((punishment[stat] * player.level ** 2) / 50);
+           const scaled = Math.round((punishment[stat] * player.level ** 2) / 50);
+const amount = Math.max(0, punishment[stat] - scaled);
+
             playerServicesInstance.modifyStatLose(stat as NumericStats, amount);
+            
         }
     }
-    return res.json(event);
+    player.eventsCompleted += 1;
+    achievementController.check(player, 'event', event.eventID);
+    achievementController.check(player, 'stats', player.eventsCompleted);
+    achievementController.check(player, "coins", player.coins);
+    return res.json({ event, player });
 }
 
 export { getRandomEvent };

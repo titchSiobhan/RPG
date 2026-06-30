@@ -1,0 +1,14 @@
+{"items" : [
+    
+    {"id": 999, "name": "Wooden Sword", "type": "weapon", "effect": {"strength": 10}, "price": 350, "level": 3},
+    {"id": 1, "name": "Wooden Shield", "type": "armor", "effect": {"defense": 10}, "price": 350, "level": 3},
+    {"id": 2, "name": "Iron Sword", "type": "weapon", "effect": {"strength": 20}, "price": 450, "level": 6},
+    {"id": 3, "name": "Iron Shield", "type": "armor", "effect": {"defense": 20}, "price": 450, "level": 6},
+    {"id": 4, "name": "Iron Mace", "type": "weapon", "effect": {"strength": 30}, "price": 700,   "level": 8},
+    {"id": 5,"name": "Iron Helm", "type": "armor", "effect": {"defense": 30}, "price": 700, "level": 8},
+    {"id": 6, "name": "Health Potion", "type": "consumable", "effect": {"health": 50}, "price": 100, "level": 1},
+    {"id": 7, "name": "Luck Potion", "type": "consumable", "effect": {"luck": 100}, "price": 300, "level": 2},
+    {"id": 8 ,"name": "Wooden Bat", "type": "weapon", "effect": {"strength": 5}, "price": 50, "level": 1},
+    {"id": 9,"name": "Pike", "type": "weapon", "effect": {"strength": 15}, "price": 200, "level": 5}
+
+]}

@@ -1,11 +1,15 @@
 import { playerServicesInstance } from '../service/playerServices.js';
 import quests from '../dataJsons/quest.json' with { type: 'json' };
 import type { Request, Response } from 'express';
-
+import { achievementController } from './achievementsController.js';
 
 function rest(req: Request, res: Response) {
 	const player = playerServicesInstance.getPlayer();
 try {
+	if (player.health === player.maxHealth && player.energy === player.maxEnergy) {
+			res.json({ message: 'You are fully rested and healthy', player });
+			return
+		}
     const randomLuck = Math.floor(Math.random() * 100);
 	player.health = Math.min(player.health + 15, player.maxHealth);
 	player.energy = Math.min(player.energy + 15, player.maxEnergy);
@@ -92,7 +96,12 @@ const quest = quests.quests.find(q => q["questID"] === questId)
 					playerServicesInstance.modifyStatLose(stat as NumericStats, amount);
 				}
 			}
-		
+			
+
+				player.questsCompleted += 1;
+				achievementController.check(player, 'quest', player.luckCategory);
+				achievementController.check(player, 'stats', player.questsCompleted);
+				achievementController.check(player, "coins", player.coins);
 				return res.json({	outcome, player });
 		}
 	}

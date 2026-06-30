@@ -2,6 +2,7 @@ import express from 'express'
 import playerRouter from './routes/playerRoutes.js'
 import fightRouter from './routes/fightRoutes.js'
 import questRouter from './routes/questRouter.js'
+import shopRouter from './routes/shopRoutes.js'
 
 import { playerServicesInstance } from './service/playerServices.js'
 
@@ -21,13 +22,15 @@ app.use(cors(options));
 app.use(express.json())
 
 
-app.get('/', (req, res) => {
-    res.send('Hello World!')
-})
+app.get('/api/ping', (req, res) => {
+    res.json({ ok: true });
+});
+
 
 app.use('/player', playerRouter)
 app.use('/fight', fightRouter)
-app.use('/quest', questRouter)  
+app.use('/quest', questRouter)
+app.use('/shop', shopRouter)
 
 
 export default app
