@@ -41,6 +41,8 @@ const amount = Math.max(0, punishment[stat] - scaled);
     achievementController.check(player, 'event', event.eventID);
     achievementController.check(player, 'stats', player.eventsCompleted);
     achievementController.check(player, "coins", player.coins);
+    playerServicesInstance.savePlayer();
+
     return res.json({ event, player });
 }
 

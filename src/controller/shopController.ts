@@ -26,6 +26,8 @@ function buyItem(req: Request, res : Response) {
         player.inventory.push(item);
     }
     achievementController.check(player, "item", item.name);
+    playerServicesInstance.savePlayer();
+
     res.json({ 
     player,
     message: `${item.name} bought!`

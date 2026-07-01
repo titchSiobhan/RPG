@@ -1,3 +1,4 @@
+import fs from "fs";
 
    export type Player = {
     name: string,
@@ -42,7 +43,7 @@ type NumericStats = {
   
 class playerServices {
   private player: Player = {
-    name: "Unknown",
+    name: '',
     level: 1,
     health: 100,
     maxHealth: 100,
@@ -77,11 +78,7 @@ class playerServices {
     eventsCompleted: 0,
     achievements: []
   }
-   getPlayer() {
-    return this.player;
-  }
-
-createPlayer(name: string): Player {
+  createPlayer(name: string): Player {
     this.player = {
       name,
       level: 1,
@@ -119,8 +116,14 @@ createPlayer(name: string): Player {
       achievements: []
     };
    
+    this.savePlayer();
+  return this.player;
+  }
+   getPlayer() {
     return this.player;
   }
+
+
   maxMap = {
     health: 'maxHealth',
     exp: 'maxExp',
@@ -130,12 +133,25 @@ createPlayer(name: string): Player {
     coins: 'maxCoins',
   } as const
 
- 
+ loadPlayer() {
+  if (fs.existsSync("player.json")) {
+    this.player = JSON.parse(fs.readFileSync("player.json", "utf-8"));
+  }
+}
+constructor() {
+    this.loadPlayer();
+  }
 
   gainExp(amount: number): Player {
     this.player.exp += amount;
-    return this.player;
+  
+    this.savePlayer();
+  return this.player;
   }
+    savePlayer() {
+  fs.writeFileSync("player.json", JSON.stringify(this.player, null, 2));
+}
+
 
    levelUp(): Player {
     while (this.player.exp >= this.player.maxExp) {
@@ -153,7 +169,8 @@ createPlayer(name: string): Player {
       this.player.baseStrength += 5;
       
     }
-    return this.player;
+     this.savePlayer();
+  return this.player;
   }
 
 
@@ -181,7 +198,8 @@ createPlayer(name: string): Player {
     if (newReputation !== this.player.reputation) {
       this.changingReputationCategory();
     }
-    return this.player;
+    this.savePlayer();
+  return this.player;
   }
 
   modifyStatLose(stat:  NumericStats, amount: number): Player {
@@ -197,7 +215,8 @@ createPlayer(name: string): Player {
     if (newReputation !== this.player.reputation) {
       this.changingReputationCategory();
     }
-    return this.player;
+     this.savePlayer();
+  return this.player;
   }
 
   changingLuckCategory(): Player {
@@ -240,7 +259,10 @@ createPlayer(name: string): Player {
     } else if (stat === 'defense') {
       this.player.defense += amount;
     }
+     this.savePlayer();
+  return this.player;
   }
+  
 
 }
 

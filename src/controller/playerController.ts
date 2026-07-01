@@ -54,6 +54,8 @@ function gainStat(req: Request, res: Response) {
 			playerServicesInstance.modifyStatGain(change.stat, change.amount);
 		}
 	}
+	playerServicesInstance.savePlayer();
+
 	res.json(player);
 }
 
@@ -68,6 +70,8 @@ function loseStat(req: Request, res: Response) {
 			playerServicesInstance.modifyStatLose(change.stat, change.amount);
 		}
 	}
+	playerServicesInstance.savePlayer();
+
 	res.json(player);
 }
 
@@ -94,11 +98,15 @@ function equipItem (req: Request, res: Response) {
 		if(item.effect.health){
 			playerServicesInstance.modifyStatGain('health', item.effect.health);
 			player.inventory = player.inventory.filter(inv => inv.id !== item.id);
+			playerServicesInstance.savePlayer();
+
 			return res.json({message: `Used ${item.name}`, player});
 		}
 		if (item.effect.luck) {
 			playerServicesInstance.modifyStatGain('luck', item.effect.luck);
 			player.inventory = player.inventory.filter(inv => inv.id !== item.id);
+			playerServicesInstance.savePlayer();
+
 			return res.json({message: `Used ${item.name}`, player});
 		}
 		
@@ -113,7 +121,7 @@ function equipItem (req: Request, res: Response) {
 		if (oldItem.effect.defense) {
 			player.defense -= oldItem.effect.defense
 		}
-console.log('effect', item.effect.strength);
+
 		player.equip[slot] = item
 		if (item.effect.strength) {
 			player.strength += item.effect.strength
@@ -121,6 +129,8 @@ console.log('effect', item.effect.strength);
 		if (item.effect.defense) {
 			player.defense += item.effect.defense
 		}
+		playerServicesInstance.savePlayer();
+
 		return res.json({message: `Equipped ${item.name}`, player});
 	}
 	
@@ -135,7 +145,8 @@ console.log('effect', item.effect.strength);
 	}
 	
 	
-	
+	playerServicesInstance.savePlayer();
+
 	res.json(player);
 
 }
@@ -158,6 +169,8 @@ function unEquipItem(req: Request, res: Response) {
 		}
 
 		player.equip[slot] = null
+		playerServicesInstance.savePlayer();
+
 		return res.json({message: `Unequipped ${item.name}`, player});
 	}
 	

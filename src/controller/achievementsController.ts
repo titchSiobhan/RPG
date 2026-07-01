@@ -62,6 +62,8 @@ class AchievementController {
 	unlock(player: Player, id: number) {
 		player.achievements.push(id);
 	}
+
+
 }
 
 export const achievementController = new AchievementController();

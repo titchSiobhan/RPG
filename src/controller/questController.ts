@@ -24,7 +24,8 @@ try {
             amazing: "You feel super lucky today."
         };
 		const message = luckMessages[player.luckCategory];
-		
+		playerServicesInstance.savePlayer();
+
 	res.json({player, message});
 }
 catch (error) {
@@ -102,6 +103,8 @@ const quest = quests.quests.find(q => q["questID"] === questId)
 				achievementController.check(player, 'quest', player.luckCategory);
 				achievementController.check(player, 'stats', player.questsCompleted);
 				achievementController.check(player, "coins", player.coins);
+				playerServicesInstance.savePlayer();
+
 				return res.json({	outcome, player });
 		}
 	}
@@ -137,6 +140,8 @@ function declineQuest(req: Request, res: Response) {
 			playerServicesInstance.modifyStatLose(statKey as any, amount);
 		}
 	}
+	playerServicesInstance.savePlayer();
+
 
 	return res.json({ quest, punishmentApplied: punishment, player });
 

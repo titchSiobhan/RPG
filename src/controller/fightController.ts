@@ -67,6 +67,8 @@ function attackEnemy(req: Request, res: Response) {
       
         achievementController.check(player, 'stats', player.timesWon);
         achievementController.check(player, "coins", player.coins);
+        playerServicesInstance.savePlayer();
+
     }
     
     res.json({ enemy: currentEnemy,  player: player});
@@ -85,6 +87,8 @@ function enemyAttacks(req: Request, res: Response) {
         
         achievementController.check(player, 'stats', player.timesDefeated);
         achievementController.check(player, "coins", player.coins);
+        playerServicesInstance.savePlayer();
+
         return res.json({player});
     }
 

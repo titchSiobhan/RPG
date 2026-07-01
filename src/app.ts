@@ -13,12 +13,22 @@ const allowedOrigins = ['http://localhost:5173',
 
 
 import cors from 'cors';
-const options: cors.CorsOptions = {
-    origin: allowedOrigins,
-    credentials: true
-}
+app.use(
+  cors({
+    origin: function (origin, callback) {
+      if (!origin) return callback(null, true); // allow mobile apps / curl
+      if (allowedOrigins.includes(origin)) {
+        return callback(null, true);
+      }
+      return callback(new Error("Not allowed by CORS"));
+    },
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    allowedHeaders: ["Content-Type", "Authorization"]
+  })
+);
 
-app.use(cors(options));
+
 app.use(express.json())
 
 
